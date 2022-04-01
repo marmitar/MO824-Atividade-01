@@ -90,8 +90,8 @@
     \end{minipage}%
     \begin{minipage}{0.4\textwidth}
         \centering
-        Tiago de Paula Alves ~(187679) \\
-        \href{mailto:tiagodepalves@gmail.com}{\texttt{tiagodepalves@gmail.com}}
+        Vinicius da Silva ~(206734) \\
+        \href{mailto:v206734@dac.unicamp.br}{\texttt{v206734@dac.unicamp.br}}
     \end{minipage}%
     \hfill
 }

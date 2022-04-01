@@ -6,35 +6,46 @@
 
     \subsection{Parâmetros}
 
-        INTEIROS, DIM
+        \subsubsection{Dimensões}
 
-        \begin{description}
-            \item[$J$] quantidade de clientes;
-            \item[$F$] quantidade de fábricas;
-            \item[$L$] quantidade de máquinas em cada fábrica;
-            \item[$M$] quantidade de tipos de matéria-prima;
-            \item[$P$] quantidade de tipos de produtos;
-        \end{description}
+            Esses valores são necessariamente inteiros, já que medem contagem de itens.
 
-        REAIS
+            \begin{description}
+                \item[$J$] quantidade de clientes;
+                \item[$F$] quantidade de fábricas;
+                \item[$L$] quantidade de máquinas em cada fábrica;
+                \item[$M$] quantidade de tipos de matéria-prima;
+                \item[$P$] quantidade de tipos de produtos;
+            \end{description}
 
-        \begin{description}
-            \item[$D_{j,p}$]    demanda do cliente j, em toneladas, do produto $p$;
-            \item[$r_{m,p,l}$]  quantidade de matéria-prima $m$, em toneladas, necessária para produzir uma tonelada do produto $p$ na máquina $l$;
-            \item[$R_{m,f}$]    quantidade de matéria-prima $m$, em toneladas, disponível na fábrica $f$;
-            \item[$C_{l,f}$]    capacidade disponível de produção, em toneladas, da máquina $l$ na fábrica $f$;
-            \item[$p_{p,l,f}$]  custo de produção por tonelada do produto $p$ utilizando a máquina $l$ na fábrica $f$;
-            \item[$t_{p,f,j}$]  custo de transporte por tonelada do produto $p$ partindo da fábrica $f$ até o cliente $j$;
-        \end{description}
+        \subsubsection{Parâmetros de Restrição}
+
+            Valores usados nas restrições do problema e podem ser reais.
+
+            \begin{description}
+                \item[$D_{j,p}$] demanda do cliente j, em toneladas, do produto $p$;
+                \item[$R_{m,f}$] quantidade de matéria-prima $m$, em toneladas, disponível na fábrica $f$;
+                \item[$C_{l,f}$] capacidade disponível de produção, em toneladas, da máquina $l$ na fábrica $f$;
+            \end{description}
+
+        \subsubsection{Parâmetros de Relação de Variáveis}
+
+            Relação entre matéria-prima e produto e entre produtos, clientes e custo. Também podem ser reais.
+
+            \begin{description}
+                \item[$r_{m,p,l}$]  quantidade de matéria-prima $m$, em toneladas, necessária para produzir uma tonelada do produto $p$ na máquina $l$;
+                \item[$p_{p,l,f}$]  custo de produção por tonelada do produto $p$ utilizando a máquina $l$ na fábrica $f$;
+                \item[$t_{p,f,j}$]  custo de transporte por tonelada do produto $p$ partindo da fábrica $f$ até o cliente $j$;
+            \end{description}
 
     \subsection{Variáveis de Decisão}
+
+        As variáveis desse problema podem assumir quaisquer valores reais, considerando as restrições abaixo.
 
         \begin{description}
             \item[$x_{p,l,f}$] toneladas produzidas de $p$ na máquina $l$ da fábrica $f$;
             \item[$y_{p,f,j}$] toneladas transportadas de $p$ da fábrica $f$ para o cliente $j$;
         \end{description}
-
-        \subsubsection{}
 
     \subsection{Restrições}
 
@@ -65,10 +76,14 @@
 
     \subsection{Função Objetivo}
 
+        O objetivo final da otimização é minimizar o custo total, garantindo a demanda dos clientes. O custo é separado nos seguintes tipos:
+
         \begin{align*}
             \text{custo de produção} &= \sum_{f = 1}^F \sum_{p = 1}^P \sum_{l = 1}^L  x_{p,l,f} p_{p,l,f} \\
             \text{custo de transporte} &= \sum_{f = 1}^F \sum_{p = 1}^P \sum_{j = 1}^J y_{p,f,j} t_{p,f,j}
         \end{align*}
+
+        Assim, o objetivo é minimizar:
 
         \begin{align*}
             \text{custo total} &= \text{custo de produção} + \text{custo de transporte} \\
