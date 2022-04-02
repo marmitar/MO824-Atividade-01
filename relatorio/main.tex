@@ -59,7 +59,6 @@
 \usetikzlibrary{shapes}
 
 \usepackage{import, pgf}
-\renewcommand{\selectfont}{}
 
 \newenvironment{kmatrix}[1][1.3cm]{
     \begin{tikzpicture}[node distance=0cm]
@@ -85,6 +84,13 @@
 \newcommand{\red}[1]{\textcolor{red}{\textbf{#1}}}
 \def\qm{?}
 
+
+\newcommand{\includepgf}[1]{%
+    \begingroup%
+        \renewcommand{\selectfont}{}%
+        \import{figuras}{#1}%
+    \endgroup%
+}
 
 \begin{document}
 
