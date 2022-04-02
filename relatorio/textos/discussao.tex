@@ -1,17 +1,21 @@
 \section{Análise dos Resultados}
 
-
-
-    \[
-        5 J^2 + 25 J \leq \text{\# Variáveis} \leq 20 J^2 + 200 J
-    \]
-    \[
-        \text{média}\left(\text{\# Variáveis}\right) = 11.25 J^2 + 84.375 J
-    \]
-
     \begin{figure}[H]
         \centering
         \caption{Tempo de execução em relação a quantidade de clientes e o número de variáveis de otimização.}
 
         \includepgf{tempo_variaveis.pgf}
     \end{figure}
+
+    Infelizemente, não conseguimos executar todos os experimentos. Um dos possíveis problemas é que o número de variáveis no modelo, que é dado por:
+    \[
+        \text{número de variáveis} = P L F + P F J = P F (L + J)
+    \]
+
+    Considerando os limites da instância no enunciado, temos que
+    \begin{align*}
+        5 \cdot J (5 + J) \leq &\text{número de variáveis} \leq 10 \cdot 2 J (10 + J) \\
+        5 J^2 + 25 J \leq &\text{número de variáveis} \leq 20 J^2 + 200 J
+    \end{align*}
+
+    Portanto, o número de variáveis cresce de forma quadrática com o parâmetro $J$. Considerando que, no melhor dos casos, o tempo de execução depende linearmente do número de variáveis, então o tempo também cresce de forma quadrática.
