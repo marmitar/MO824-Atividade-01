@@ -60,7 +60,7 @@
 \setlength{\headheight}{14pt}
 \fancyhf{}
 \fancyhead[L]{\sffamily Universidade Estadual de Campinas}
-\fancyhead[R]{\sffamily MO824 Tópicos em Otimização Combinatória, 2022 1S}
+\fancyhead[R]{\sffamily MC859 Projeto em Teoria da Computação, 2022 1S}
 \fancyfoot[L]{\sffamily IC Instituto de Computação}
 \fancyfoot[R]{\sffamily\bfseries\thepage}
 \renewcommand{\headrulewidth}{0.5pt}
