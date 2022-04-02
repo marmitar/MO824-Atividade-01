@@ -58,6 +58,9 @@
 \usetikzlibrary{automata}
 \usetikzlibrary{shapes}
 
+\usepackage{import, pgf}
+\renewcommand{\selectfont}{}
+
 \newenvironment{kmatrix}[1][1.3cm]{
     \begin{tikzpicture}[node distance=0cm]
         \tikzset{square matrix/.style={
@@ -89,5 +92,6 @@
 
     \input{textos/modelo}
     \input{textos/experimentos}
+    \input{textos/discussao}
 
 \end{document}
